@@ -19,3 +19,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .counter {
+    background: white;
+    padding: 20px;
+  }
+</style>
