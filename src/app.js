@@ -1,1 +1,2 @@
-console.log('test');
+let name = 'elijah sharper'
+console.log(name)
