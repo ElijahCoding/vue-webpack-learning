@@ -4,6 +4,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
+// console.log(process.env.NODE_ENV)
+
 module.exports = merge(base, {
   module: {
     rules: [

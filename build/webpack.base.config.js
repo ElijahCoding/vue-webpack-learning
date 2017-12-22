@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const config = require('../config/development.config')
 
 module.exports = {
   entry: './src/app.js',
@@ -22,7 +24,7 @@ module.exports = {
           test: /\.vue$/,
           loader: 'vue-loader',
           options: {
-            extractCSS: false
+            extractCSS: process.env.NODE_ENV === 'production'
           }
       },
 
@@ -42,6 +44,12 @@ module.exports = {
       inject: true,
       filename: 'index.html',
       template: 'index.html'
+    }),
+
+    new webpack.DefinePlugin({
+      'process': {
+        env: config
+      }
     })
   ],
 

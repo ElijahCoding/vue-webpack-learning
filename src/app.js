@@ -6,3 +6,5 @@ new Vue({
   el: '#root',
   render: h => h(App)
 })
+
+console.log('http://localhost')
