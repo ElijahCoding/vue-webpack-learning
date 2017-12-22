@@ -1,9 +1,10 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'js/app.js'
   },
 
@@ -21,7 +22,7 @@ module.exports = {
           test: /\.vue$/,
           loader: 'vue-loader',
           options: {
-            extractCSS: true
+            extractCSS: false
           }
       },
 
@@ -35,6 +36,14 @@ module.exports = {
       }
     ]
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      filename: 'index.html',
+      template: 'index.html'
+    })
+  ],
 
   devServer: {
     compress: true,
